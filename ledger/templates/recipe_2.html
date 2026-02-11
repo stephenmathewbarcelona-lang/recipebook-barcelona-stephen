@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+{%load static%}
+
+{%block content%}
+<h2>{{name}}</h2>
+<u1>
+    {% for ingredient in ingredients%}
+        <li> {{ingredient.name}}, {{ingredient.quantity}} </li>
+    {% endfor %}
+</u1>
+<u2> 
+        <li> <a href={{link}}> {{link}} </a></li>
+</u2>
+{%endblock%}
