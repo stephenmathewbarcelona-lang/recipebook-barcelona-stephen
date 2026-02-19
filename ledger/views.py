@@ -90,7 +90,7 @@ def recipe_2(request):
 
 class RecipeDetailView(DetailView):
     model = Recipe
-    template_name = "recipes_details.html"
+    template_name = "recipe_details.html"
 
 class RecipeListView(ListView):
     model = Recipe

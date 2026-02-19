@@ -22,7 +22,7 @@ class Recipe(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('ledger:recipes-detail', args=[str(self.id)])
+        return reverse('ledger:recipe-detail', args=[str(self.id)])
     
     class Meta:
         verbose_name = 'recipe'
