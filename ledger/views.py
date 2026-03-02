@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Recipe 
 
@@ -21,7 +22,7 @@ def recipes_detail(request, pk):
 
     return render(request, 'recipes_details.html', ctx)
 
-class RecipeDetailView(DetailView):
+class RecipeDetailView(LoginRequiredMixin,DetailView):
     model = Recipe
     template_name = "recipe_details.html"
 

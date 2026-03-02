@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from . models import Recipe, RecipeIngredient, Ingredients
 
 class TaskInLine(admin.TabularInline):
@@ -10,6 +11,5 @@ class RecipeAdmin(admin.ModelAdmin):
         TaskInLine,
     ]
 
-
 # Register your models here.
-admin.site.register(Recipe, RecipeAdmin)
+admin.site.register(Recipe, RecipeAdmin)   
