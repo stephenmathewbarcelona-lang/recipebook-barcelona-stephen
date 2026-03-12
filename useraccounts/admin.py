@@ -11,6 +11,11 @@ class ProfileInLine(admin.StackedInline):
 class UserAdmin(BaseUserAdmin):
     inlines = [ProfileInLine, ]
 
+class ProfileAdmin(admin.ModelAdmin):
+    model = Profile
+    list_display = ['name', 'user']
+
 # Register your models here.
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin) 
+admin.site.register(Profile, ProfileAdmin)
