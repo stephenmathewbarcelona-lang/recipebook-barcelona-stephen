@@ -2,14 +2,26 @@
 {%load static%}
 
 {%block content%}
+
 <h2>{{recipe.name}}</h2>
 <h3>{{recipe.author}}</h3>
+
+<body>
+    {% for img in recipe.images.all %}
+        <div class = "recipe-image">
+            <img src="{{ img.recipe_image.url }}" alt="{{ img.description }}" style="max-width: 500px; max-height:500px;">
+        </div>
+    {% endfor %}
+</body>
+
 <u1>
     {% for ingredient in recipe.ingredients.all %}
         <li> {{ingredient.ingredient.name}}, {{ingredient.quantity}} </li>
     {% endfor %}
 </u1>
+
 <u2> 
-        <li> <a href={{recipe.get_absolute_url}}> {{recipe.get_absolute_url}} </a></li>
+        <li> <a href="{% url 'ledger:recipes-list' %}"> Back to Recipes List </a></li>
 </u2>
+
 {%endblock%}
