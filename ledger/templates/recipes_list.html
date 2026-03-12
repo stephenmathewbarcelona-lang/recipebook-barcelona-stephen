@@ -5,7 +5,10 @@
 <h2>Recipe List</h2>
 <u1>
     {% for recipe in recipe_list %}
-        <li> <a href={{recipe.get_absolute_url}}> {{recipe.name}} </a></li>
+        <li> 
+            <a href={{recipe.get_absolute_url}}> {{recipe.name}} </a>
+        </li>
     {% endfor %}
 </u1>
+<li> <a href="{% url 'ledger:recipe-add' %}">Create a New Recipe</a> </li>
 {%endblock%}

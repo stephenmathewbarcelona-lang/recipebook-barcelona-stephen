@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 from useraccounts.models import Profile
 
-
 # Create your models here.
 class Ingredients(models.Model):
     name = models.CharField(max_length=100)
