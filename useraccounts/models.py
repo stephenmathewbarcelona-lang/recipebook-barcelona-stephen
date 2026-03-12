@@ -10,3 +10,6 @@ class Profile(models.Model):
     bio = models.TextField(blank=True, 
                            validators=[MinLengthValidator(256)]
                            )
+    
+    def __str__(self):
+        return self.name
